@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="pl.pollub.nnote">
+
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:icon="@drawable/paper">
+        <activity android:name=".Alarm"></activity>
+        <activity android:name=".CalenderActivity" />
+        <activity android:name=".NoteEdit" />
+        <activity
+            android:name=".NoteDetails"
+            android:label="@string/title_activity_note_details"
+            android:parentActivityName=".NoteActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pl.pollub.nnote.NoteActivity" />
+        </activity>
+        <activity android:name=".AddNote">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".NoteActivity" />
+        </activity>
+        <activity android:name=".NoteActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
